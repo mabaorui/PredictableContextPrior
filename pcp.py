@@ -448,7 +448,8 @@ def sample_query_points(input_ply_file):
     for iv in range(len(sample_part)):
             #print(np.asarray(sample[iv]).shape)
             np.savez(a.data_dir + input_ply_file + '_' + str(iv), sample = sample_part[iv],sample_near = sample_near_part[iv])
-sample_query_points(a.input_ply_file)
+if(a.train):
+    sample_query_points(a.input_ply_file)
 mm = 0
 files = []
 files_path = []

@@ -26,8 +26,7 @@ If you find our code or paper useful, please consider citing
 <p align="left">
   <img src="img/bim_points.png" width="390" /><img src="img/bim_mesh.png" width="390" />
 </p>
-![Input PointCloud](img/bim_points.png)|![Output Mesh](img/bim_mesh.png)
----|---
+
 
 ## Predicted Queries Visualization
 <p align="left">

@@ -53,6 +53,7 @@ You should train the Local Context Prior Network first, run
 python pcp.py --input_ply_file test.ply --data_dir ./data/ --CUDA 0 --OUTPUT_DIR_LOCAL ./local_net/ --OUTPUT_DIR_GLOBAL ./glocal_net/ --train --save_idx -1
 ```
 You should put the point cloud file(--input_ply_file, only ply format) into the '--data_dir' folder.
+
 Then train the Predictive Context Prior Network, run
 ```
 python pcp.py --input_ply_file test.ply --data_dir ./data/ --CUDA 0 --OUTPUT_DIR_LOCAL ./local_net/ --OUTPUT_DIR_GLOBAL ./glocal_net/ --finetune --save_idx -1

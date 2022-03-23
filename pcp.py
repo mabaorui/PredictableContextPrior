@@ -4,12 +4,11 @@ Created on Thu Jul 23 16:44:22 2020
 
 @author: Administrator
 """
-#############
-#多个模型4^3个局部 + 全局网络 + pointnet + 一个模型一个模型finetune + 场景训练测试 + 53服务器 3D Scene Dataset *****
+
 import numpy as np
-import tensorflow as tf 
-#import tensorflow.compat.v1 as tf
-#tf.disable_v2_behavior()
+#import tensorflow as tf 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import os 
 import shutil
 import random
@@ -382,7 +381,7 @@ def sample_query_points(input_ply_file):
     sample_dis = []
     sample_vec = []
     gt_kd_tree = cKDTree(pointcloud_s)
-    for i in range(int(1000000/pointcloud_s.shape[0])):
+    for i in range(int(500000/pointcloud_s.shape[0])):
         
         pnts = pointcloud_s
         ptree = cKDTree(pnts)
@@ -400,6 +399,34 @@ def sample_query_points(input_ply_file):
         
         #tt = pnts + 0.5*0.25*np.expand_dims(sigmas,-1) * np.random.normal(0.0, 1.0, size=pnts.shape)
         tt = pnts + 0.5*np.expand_dims(sigmas,-1) * np.random.normal(0.0, 1.0, size=pnts.shape)
+        #tt = pnts + 1*np.expand_dims(sigmas_big,-1) * np.random.normal(0.0, 1.0, size=pnts.shape)
+        sample.append(tt)
+        distances, vertex_ids = gt_kd_tree.query(tt, p=2, k = 1)
+    
+
+        vertex_ids = np.asarray(vertex_ids)
+        print('distances:',distances.shape)
+        #print(vertex_ids)
+
+        sample_near.append(pointcloud_s[vertex_ids].reshape(-1,3))
+    for i in range(int(500000/pointcloud_s.shape[0])):
+        
+        pnts = pointcloud_s
+        ptree = cKDTree(pnts)
+        i = 0
+        sigmas = []
+        for p in np.array_split(pnts,100,axis=0):
+            d = ptree.query(p,51)
+            sigmas.append(d[0][:,-1])
+        
+            i = i+1
+        
+        sigmas = np.concatenate(sigmas)
+        sigmas_big = 0.2 * np.ones_like(sigmas)
+        sigmas = sigmas
+        
+        #tt = pnts + 0.5*0.25*np.expand_dims(sigmas,-1) * np.random.normal(0.0, 1.0, size=pnts.shape)
+        tt = pnts + 1.0*np.expand_dims(sigmas,-1) * np.random.normal(0.0, 1.0, size=pnts.shape)
         #tt = pnts + 1*np.expand_dims(sigmas_big,-1) * np.random.normal(0.0, 1.0, size=pnts.shape)
         sample.append(tt)
         distances, vertex_ids = gt_kd_tree.query(tt, p=2, k = 1)

@@ -32,6 +32,8 @@ If you find our code or paper useful, please consider citing
   <img src="img/2d_test.png" width="260" /><img src="img/2d_train.png" width="260" /><img src="img/2d_query.png" width="260" />
 </p>
 
+![input pointcloud](img/2d_test.png)|![input pointcloud](img/2d_test.png)
+
 ### Predicted queries in Loccal Coorinate System
 <p align="left">
   <img src="img/test1.gif" width="780" />

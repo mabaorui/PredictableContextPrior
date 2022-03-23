@@ -1,4 +1,4 @@
-# Surface Reconstruction from Point Clouds by Learning Predictive Context(CVPR 2022)
+# Surface Reconstruction from Point Clouds by Learning Predictive Context (CVPR 2022)
 
 This repository contains the code to reproduce the results from the paper.
 [Surface Reconstruction from Point Clouds by Learning Predictive Context](https://arxiv.org/abs/2011.13495).

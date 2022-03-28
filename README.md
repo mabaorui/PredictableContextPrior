@@ -1,15 +1,15 @@
 # Surface Reconstruction from Point Clouds by Learning Predictive Context Priors (CVPR 2022)
 
 This repository contains the code to reproduce the results from the paper.
-[Surface Reconstruction from Point Clouds by Learning Predictive Context Priors](https://arxiv.org/abs/2011.13495).
+[Surface Reconstruction from Point Clouds by Learning Predictive Context Priors](https://yushen-liu.github.io/main/pdf/CVPR2022_PredictiveContextPriors.pdf).
 
 You can find detailed usage instructions for training your own models and using pretrained models below.
 
 If you find our code or paper useful, please consider citing
 
-    @inproceedings{NeuralPull,
+    @inproceedings{PredictiveContextPriors,
         title = {Surface Reconstruction from Point Clouds by Learning Predictive Context Priors},
-        author = {Baorui, Ma and Yu-shen, Liu and Matthias, Zwicker and Zhizhong, Han},
+        author = {Baorui, Ma and Yu-Shen, Liu and Matthias, Zwicker and Zhizhong, Han},
         booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
         year = {2022}
     }

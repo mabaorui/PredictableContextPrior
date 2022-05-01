@@ -1,5 +1,5 @@
 # Surface Reconstruction from Point Clouds by Learning Predictive Context Priors (CVPR 2022)
-<h2 align="center"><a href="https://arxiv.org/abs/2204.11015">Paper</a> | <a href="https://mabaorui.github.io/PredictableContextPrior_page/">Project Page</a></h2>
+<h2 align="center"><a href="https://mabaorui.github.io/">Personal Web Pages</a> | <a href="https://arxiv.org/abs/2204.11015">Paper</a> | <a href="https://mabaorui.github.io/PredictableContextPrior_page/">Project Page</a></h2>
 This repository contains the code to reproduce the results from the paper.
 [Surface Reconstruction from Point Clouds by Learning Predictive Context Priors](https://arxiv.org/abs/2204.11015).
 

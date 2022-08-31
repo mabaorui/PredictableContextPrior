@@ -77,3 +77,6 @@ You can extract the mesh model from the trained network, run
 ```
 python pcp.py --input_ply_file test.ply --data_dir ./data/ --CUDA 0 --OUTPUT_DIR_LOCAL ./local_net/ --OUTPUT_DIR_GLOBAL ./glocal_net/ --test --save_idx -1
 ```
+
+## ToDo
+In different datasets or your own data, because of the variation in point cloud density, this ['0.5' parameter](https://github.com/mabaorui/PredictableContextPrior/blob/c8fc75f8087370953d1e4089283d520cd1af07a5/pcp.py#L401) has a very strong influence on the final result, which controls the distance between the query points and the point cloud. So if you want to get better results, you should adjust this parameter. We give '0.25' here as a reference value, and this value can be used for most object-level reconstructions. For the scene dataset, we will later publish the reference values for the hyperparameter settings for the scene dataset.
